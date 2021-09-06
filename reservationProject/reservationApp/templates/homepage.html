@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>listing web site</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>R num</th>
+                <th>in</th>
+                <th>out</th>
+            </tr>
+            {%for listing in listings %}
+            <tr> 
+                <td>{{listing.name}}</td>
+                <td>{{listing.room_number.room_number}}</td>
+                <td>{{listing.reserve_check_in}}</td>
+                <td>{{listing.guests_count}}</td>
+            </tr>
+            {%endfor%}
+        </table>
+            
+    </body>
+</html>
