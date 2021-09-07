@@ -3,7 +3,7 @@ this is a Rest API system that provide users to make and trace their reservation
 
 
 ## How to run
-install django then try (pip3 install -r requirements.txt) to installing dependencies. 
+install virtual inviveremnt and active it, then try (pip3 install -r requirements.txt) to installing dependencies. 
 ++django admin panel username and password are (admin)++
 
 ## Detailed diagrams & Documentation
