@@ -18,10 +18,6 @@ class Reservation(models.Model):
     # this field help us to seprate empty rooms from reserved rooms
     reserved = models.BooleanField(default=True)
 
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['room_number', 'reserve_check_in'], name='room reserved at specific time')
-        ]
 
     def __str__(self):
         return  "room number: " +  self.room_number.room_number  + " reserved by: " + self.name + " from " + str(self.reserve_check_in) + " to " + str(self.reserve_check_out)

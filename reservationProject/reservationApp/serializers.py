@@ -38,8 +38,12 @@ class ReserveRoomSerializer(serializers.ModelSerializer):
 
     def validate(self, obj):
         try:
-            reserve = Reservation.objects.filter(room_number=obj['room_number'], reserve_check_in=obj['reserve_check_in']).values('reserved')
-            if reserve :
+
+            reserve = Reservation.objects.filter(room_number=obj['room_number'],
+                                                reserve_check_out__gte = obj['reserve_check_in'], 
+                                                reserve_check_in__lte = obj['reserve_check_out'])
+            
+            if reserve.values('reserved') :
                 raise serializers.ValidationError("room is reserved at this time")
 
             if (obj['reserve_check_in'] > obj['reserve_check_out']):
