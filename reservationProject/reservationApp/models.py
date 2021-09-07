@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Room(models.Model):
-    #software_id = models.ForeignKey(Software, on_delete=models.CASCADE)
     room_number = models.CharField(max_length=100, unique=True)
     bed_count = models.PositiveIntegerField(default=1)
 
